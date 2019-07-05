@@ -85,11 +85,13 @@ try:
             event.clearEvents()
             # 参加者の反応をリセット
             Responded = None
-            Responded = event.waitKeys(keyList=['f','j'])
+            Responded = event.waitKeys(keyList=['f','j','q'])
             if Responded[0] == 'f':
                 tag.pop(1)
             elif Responded[0] == 'j':
                 tag.pop(0)
+            elif Responded[0] == 'q':
+                core.quit()
             # 参加者の反応測定終了
 
             # 中視点の準備
