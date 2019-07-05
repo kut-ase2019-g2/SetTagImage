@@ -51,7 +51,6 @@ try:
 この教示が読めたら、「スペース」キーを押して課題を始めてください"""
     instText = visual.TextStim(myWin, text=instructionStr,pos=(0,0), color=(-1,-1,-1), height=0.08)
     #instText.font = 'ヒラギノ角ゴシック W5'
-    instText.font = 'MS 明朝'
     instText.draw()
     myWin.flip()
     # 参加者がspaceキーを押すまで画面を出したまま待つ。
@@ -69,10 +68,8 @@ try:
             myText = visual.ImageStim(myWin, image=img[i], pos=(0,0.3), units='norm')
             leftText = visual.TextStim(myWin, text=str(tag[0]), pos=(-0.5,-0.7), color=(-1,-1,-1), colorSpace='rgb', height=0.2)
             #leftText.font = 'ヒラギノ角ゴシック W5'
-            leftText.font = 'MS 明朝'
             rightText = visual.TextStim(myWin, text=str(tag[1]), pos=(0.5,-0.7), color=(-1,-1,-1), colorSpace='rgb', height=0.2)
             #rightText.font = 'ヒラギノ角ゴシック W5'
-            rightText.font = 'MS 明朝'
             # テキストの書き込み
             myText.draw()
             leftText.draw()
