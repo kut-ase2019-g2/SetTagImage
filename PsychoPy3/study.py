@@ -1,9 +1,25 @@
 # -*- coding: utf-8 -*-
 from psychopy import visual, core, event, gui, data, misc
-import numpy, os, random, time, csv, glob
+import numpy, os, random, time, csv, glob, re
 
 img = glob.glob('img/*')
 numpy.random.shuffle(img)
+
+changeEn = {
+    u'キラキラ':'KiraKira',
+    u'ハート':'Heart',
+    u'音符':'Notes',
+    u'炎':'Fire',
+    u'集中線':'Central_line',
+    u'波紋':'Rain',
+    u'電撃':'Thunder',
+    u'レンズフレア':'Lens_flare',
+    u'漫画風':'Comicalize',
+    u'振動':'Blur',
+    u'コントラスト':'Change_contrast',
+    u'拡大':'Zoom_in',
+    u'縮小':'Zoom_out'
+    }
 
 try:
     # 参加者IDの取得
@@ -79,7 +95,9 @@ try:
             #　画面表示
             myWin.flip()
             core.wait(0.5)
-
+        
+        # 英語に変換する
+        tag[0] = re.sub('({})'.format('|'.join(map(re.escape, changeEn.keys()))), lambda m: changeEn[m.group()], tag[0])
         # 1画像に対する結果の保存
         results.append([
             img[i],
