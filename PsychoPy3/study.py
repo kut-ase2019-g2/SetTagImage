@@ -62,7 +62,7 @@ try:
     for i in range(len(img)):
         tag = [u'キラキラ', u'ハート', u'音符', u'炎', u'集中線', u'波紋', u'電撃', u'レンズフレア', u'漫画風', u'振動', u'コントラスト', u'拡大', u'縮小']
         k = len(tag)-1
-        imgN = visual.TextStim(myWin, text=str(i)+'/'+str(len(img)),pos=(0.9,-0.9), color=(-1,-1,-1), height=0.05)
+        imgN = visual.TextStim(myWin, text=str(i+1)+'/'+str(len(img)),pos=(0.9,-0.9), color=(-1,-1,-1), height=0.05)
         while k > 0:
             #print(tag)
             numpy.random.shuffle(tag)
