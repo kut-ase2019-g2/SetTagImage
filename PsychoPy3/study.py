@@ -65,7 +65,7 @@ try:
             #print(tag)
             numpy.random.shuffle(tag)
             # テキストの準備
-            myText = visual.ImageStim(myWin, image=img[i], pos=(0,0.3), units='norm')
+            myText = visual.ImageStim(myWin, image=img[i], pos=(0,0.3), units='norm',size = [1,1])
             leftText = visual.TextStim(myWin, text=str(tag[0]), pos=(-0.5,-0.7), color=(-1,-1,-1), colorSpace='rgb', height=0.2)
             #leftText.font = 'ヒラギノ角ゴシック W5'
             rightText = visual.TextStim(myWin, text=str(tag[1]), pos=(0.5,-0.7), color=(-1,-1,-1), colorSpace='rgb', height=0.2)
@@ -96,8 +96,8 @@ try:
             myText.draw()
             #　画面表示
             myWin.flip()
-            core.wait(0.5)
-        
+            core.wait(0.1)
+
         # 英語に変換する
         tag[0] = re.sub('({})'.format('|'.join(map(re.escape, changeEn.keys()))), lambda m: changeEn[m.group()], tag[0])
         # 1画像に対する結果の保存
